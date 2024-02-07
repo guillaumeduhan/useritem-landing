@@ -19,6 +19,7 @@ export default function Home() {
     disabled: false,
     dropdown: true,
     icon: false,
+    infos: true,
     loading: false,
     online: true,
     reverse: false,
@@ -44,8 +45,7 @@ export default function Home() {
 
   const handleChange = ({ v, target }: any) => {
     if (target === 'avatarUrl') {
-      return setData((prev: any) => ({ ...prev, [target]: data.avatarUrl.length === 0 ? AVATAR_URL : "" }))
-
+      return setData((prev: any) => ({ ...prev, [target]: data.avatarUrl ? "" : data.avatarUrl.length === 0 ? AVATAR_URL : "" }))
     }
     setData((prev: any) => ({ ...prev, [target]: v }))
   }
@@ -68,7 +68,7 @@ export default function Home() {
       </div>
       <div className="grid gap-4">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:w-[600px] align-top py-4 mx-auto content-start">
-          {["avatar", "avatarUrl", "border", "disabled", "dropdown", "icon", "loading", "online", "reverse", "shadow", "squared", "status", "verified"].map((target: any, key: number) => <div key={key} className="flex items-center justify-center gap-1">
+          {["avatar", "avatarUrl", "border", "disabled", "dropdown", "icon", "infos", "loading", "online", "reverse", "shadow", "squared", "status", "verified"].map((target: any, key: number) => <div key={key} className="flex items-center justify-center gap-1">
             <Switch
               id={target}
               checked={data[target]}
@@ -78,7 +78,7 @@ export default function Home() {
           </div>)}
         </div>
         <div className="flex items-center justify-center">
-          <p className="text-neutral-400 mb-0 text-[12px]">All the props are customizable. <Link href="https://tally.so/r/3y9Z4x" className="text-black underline cursor-pointer">Request for more props here.</Link></p>
+          <p className="text-neutral-400 mb-0 text-[12px]"><Link href="https://tally.so/r/3y9Z4x" className="text-black underline cursor-pointer">Request for more props here.</Link></p>
         </div>
         <div className="grid gap-4 max-w-[500px] mx-auto">
           <div>

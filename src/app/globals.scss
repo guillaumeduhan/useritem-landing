@@ -75,6 +75,10 @@
     line-height: 1.5;
   }
 
+  button {
+    @apply outline-none;
+  }
+
   .useritem {
     @apply text-black dark:text-white select-none relative cursor-pointer;
 
@@ -91,7 +95,7 @@
       @apply text-[15px] font-[300] text-neutral-400 truncate;
     }
     &--item {
-      @apply bg-white relative z-[99] min-h-[74px] h-[74px] flex justify-between items-center gap-[8px] py-3 pl-4 pr-5 transition ease-in duration-300;
+      @apply bg-white relative z-[99] min-h-[74px] h-[74px] flex justify-between items-center py-3 px-4 transition ease-in duration-300;
     }
     &--dropdown {
       @apply z-[9] p-2 absolute top-[73px] bg-white w-full;
