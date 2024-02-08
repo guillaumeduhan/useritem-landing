@@ -5148,10 +5148,10 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
-useritem@^0.0.12:
-  version "0.0.12"
-  resolved "https://registry.yarnpkg.com/useritem/-/useritem-0.0.12.tgz#3b9201fab1772e9cdc84a5dd06d8228c1dc3c90e"
-  integrity sha512-fm3tcD1tYO1bxaODIBBK3kSUZRnZ+FDdpxwdMscJHn0x9T2c+NThol4KtiQ/59cNeUUkcr7kxnoUCCuGz0hrbQ==
+useritem@^0.0.13:
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/useritem/-/useritem-0.0.13.tgz#0a632a5959141cf5f3ed97301a35951b402eb789"
+  integrity sha512-Hc/BV/cz37JkeM5YOeuB7gWYxhKCGgK8VL0q8JgjpPG7qw/4T3mpb5lOe/dKxYbYSimZR0dg3ricKAU5+SyYSQ==
   dependencies:
     "@types/react" "^18.2.55"
     react "^18.2.0"
