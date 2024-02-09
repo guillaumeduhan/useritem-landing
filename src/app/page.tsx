@@ -4,9 +4,11 @@ import ReactIcon from "@/components/Icons/React";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { CreditCardIcon, Settings, User } from "lucide-react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useState } from "react";
-import UserItem from 'useritem';
+// import UserItem from 'useritem';
+const UserItem = dynamic(() => import("useritem"), { ssr: false })
 
 const AVATAR_URL = "https://substackcdn.com/image/fetch/w_96,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb60dc67d-fd59-47eb-84f1-e2ba033783d0_545x545.png";
 
