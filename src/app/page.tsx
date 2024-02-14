@@ -25,11 +25,11 @@ export default function Home() {
     loading: false,
     online: true,
     reverse: false,
-    shadow: true,
+    shadow: false,
     squared: false,
     status: true,
     title: "Guillaume Duhan",
-    verified: false,
+    verified: true,
   });
 
   const [items] = useState<any>([

@@ -5176,10 +5176,10 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
-useritem@^0.0.29:
-  version "0.0.29"
-  resolved "https://registry.npmjs.org/useritem/-/useritem-0.0.29.tgz"
-  integrity sha512-/3PSKiAr6KqlorgEOgEde+cxq8vWcUAILJ3grMUFR/zAYWtZXpgIs/vkSST64PGd82+Lz4WmHb8A0UkvMCr8XA==
+useritem@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.npmjs.org/useritem/-/useritem-0.1.2.tgz"
+  integrity sha512-BBgq0uRNUPqNiLjIP7iOC4yvCZ1HZFUhqg790EIMz/o6kncKwlC2pWoXnRYFoTMUP/b4LNR0hx1cqzqWI0P8ng==
   dependencies:
     "@types/react" "^18.2.55"
     react "^18.2.0"
