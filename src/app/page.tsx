@@ -7,7 +7,6 @@ import { CreditCardIcon, Settings, User } from "lucide-react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useState } from "react";
-// import UserItem from 'useritem';
 const UserItem = dynamic(() => import("useritem"), { ssr: false })
 
 const AVATAR_URL = "https://substackcdn.com/image/fetch/w_96,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb60dc67d-fd59-47eb-84f1-e2ba033783d0_545x545.png";
@@ -59,7 +58,7 @@ export default function Home() {
     </header>
     <main className="grid gap-4 pb-12 grow">
       <div className="flex items-center justify-center mb-6">
-        <UserItem {...data} />
+        <UserItem {...data} onClick={() => alert("hello there!")} />
       </div>
       <div className="grid gap-4">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:w-[600px] align-top py-4 mx-auto content-start">
