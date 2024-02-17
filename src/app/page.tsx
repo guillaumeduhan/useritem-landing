@@ -85,10 +85,10 @@ export default function Home() {
         </div>
       </div>
     </main>
-    <footer className="h-[300px] w-full opacity-50" style={{
+    {/* <footer className="h-[300px] w-full opacity-50" style={{
       backgroundImage: `url('./bg.webp')`,
       backgroundSize: 'cover',
       backgroundPosition: 'center center'
-    }} />
+    }} /> */}
   </div>
 };
