@@ -54,7 +54,7 @@ export default function Home() {
   return <div className="flex flex-col gap-8">
     <header className="flex flex-col items-center justify-center pt-8 pb-2">
       <h1>useritem</h1>
-      <p className="lg:text-[20px] text-neutral-400 mb-0 whitespace-normal">A simple, fully customizable component for displaying your users.</p>
+      <p className="lg:text-[20px] text-neutral-400 mb-0 whitespace-normal">A fully customizable component to display your users.</p>
     </header>
     <main className="grid gap-4 pb-12 grow">
       <div className="flex items-center justify-center mb-6">

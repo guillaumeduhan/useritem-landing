@@ -1,6 +1,13 @@
-"use client";
+
 import { Inter } from "next/font/google";
 import "./globals.scss";
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'UserItem',
+  description: 'A fully customizable component to display your users.',
+}
+
 
 const inter = Inter({ subsets: ["latin"] });
 
