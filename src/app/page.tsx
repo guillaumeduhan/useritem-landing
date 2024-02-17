@@ -1,12 +1,15 @@
 "use client";
 import NextIcon from "@/components/Icons/Nextjs";
 import ReactIcon from "@/components/Icons/React";
+import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
-import { CreditCardIcon, Settings, User } from "lucide-react";
+import { CreditCardIcon, Github, Settings, User } from "lucide-react";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import Logo from '../../public/logo.png'
 const UserItem = dynamic(() => import("useritem"), { ssr: false })
 
 const AVATAR_URL = "https://substackcdn.com/image/fetch/w_96,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb60dc67d-fd59-47eb-84f1-e2ba033783d0_545x545.png";
@@ -52,7 +55,22 @@ export default function Home() {
   };
 
   return <div className="flex flex-col gap-8">
-    <header className="flex flex-col items-center justify-center pt-8 pb-2">
+    <div className="h-[50px] w-full opacity-100 border-b-2 border-black" style={{
+      backgroundImage: `url('./bg.webp')`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center center'
+    }} />
+    <header className="relative flex flex-col items-center justify-center">
+      <div className="absolute top-2 right-12">
+        <Link href="https://dub.sh/useritem-github" target="_blank">
+          <Button>
+            <Github className="w-4 h-4 mr-2" /> Github
+          </Button>
+        </Link>
+      </div>
+      <div className="w-12 h-12 overflow-hidden rounded-lg">
+        <Image src={Logo} alt="UserItem" />
+      </div>
       <h1>useritem</h1>
       <p className="lg:text-[20px] text-neutral-400 mb-0 whitespace-normal">A fully customizable component to display your users.</p>
     </header>
@@ -71,9 +89,6 @@ export default function Home() {
             <Label htmlFor={target} className="w-[50px]">{target}</Label>
           </div>)}
         </div>
-        <div className="flex items-center justify-center">
-          <p className="text-neutral-400 mb-0 text-[12px]"><Link href="https://tally.so/r/3y9Z4x" className="text-black underline cursor-pointer">Request for more props here.</Link></p>
-        </div>
         <div className="grid gap-4 max-w-[500px] mx-auto">
           <div>
             <code>npm i useritem</code>
@@ -83,12 +98,10 @@ export default function Home() {
             <NextIcon />
           </div>
         </div>
+        <div className="flex items-center justify-center">
+          <p className="text-neutral-400 mb-0 text-[12px]"><Link href="https://tally.so/r/3y9Z4x" className="text-black underline cursor-pointer">Request for more props here.</Link></p>
+        </div>
       </div>
     </main>
-    {/* <footer className="h-[300px] w-full opacity-50" style={{
-      backgroundImage: `url('./bg.webp')`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center center'
-    }} /> */}
   </div>
 };

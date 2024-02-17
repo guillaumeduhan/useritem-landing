@@ -15,7 +15,9 @@ export default function RootLayout({
         <meta name="description" content="A fully customizable component to display your users." />
         <title>UserItem by @codewithguillaume</title>
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+      </body>
       <script defer data-domain="useritem.dev" src="https://plausible.io/js/script.js"></script>
     </html>
   );
