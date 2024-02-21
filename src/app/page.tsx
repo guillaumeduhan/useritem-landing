@@ -84,7 +84,7 @@ export default function Home() {
       </div>
       <div className="grid gap-4">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:w-[600px] align-top py-4 mx-auto content-start">
-          {["avatar", "avatarUrl", "border", "disabled", "infos", "loading", "online", "shadow", "squared", "status"].map((target: any, key: number) => <div key={key} className="flex items-center justify-center gap-1">
+          {["avatar", "avatarUrl", "border", "disabled", "infos", "loading", "online", "shadow", "squared", "status", "verified"].map((target: any, key: number) => <div key={key} className="flex items-center justify-center gap-1">
             <Switch
               id={target}
               checked={data[target]}
