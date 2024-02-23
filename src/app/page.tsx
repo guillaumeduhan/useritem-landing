@@ -4,7 +4,7 @@ import ReactIcon from "@/components/Icons/React";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
-import { Github, Shuffle } from "lucide-react";
+import { Github } from "lucide-react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
@@ -77,14 +77,13 @@ export default function Home() {
     </header>
     <main className="grid gap-4 pb-12 grow">
       <div className="flex items-center justify-center gap-4 mb-6">
-        <div className="scale-105">
+        <div className="text-[16px]">
           <UserItem {...data} onClick={() => alert("hello there!")} />
         </div>
-        <Shuffle onClick={() => randomize()} className="cursor-pointer hover:text-black text-neutral-500" />
       </div>
       <div className="grid gap-4">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:w-[600px] align-top py-4 mx-auto content-start">
-          {["avatar", "avatarUrl", "border", "disabled", "infos", "loading", "online", "shadow", "squared", "status", "verified"].map((target: any, key: number) => <div key={key} className="flex items-center justify-center gap-1">
+          {["avatar", "avatarUrl", "border", "disabled", "loading", "online", "shadow", "squared", "status"].map((target: any, key: number) => <div key={key} className="flex items-center justify-center gap-1">
             <Switch
               id={target}
               checked={data[target]}
@@ -94,6 +93,8 @@ export default function Home() {
           </div>)}
         </div>
         <div className="grid gap-4 max-w-[500px] mx-auto">
+          <p>
+            <p className="text-neutral-400 mb-0 text-[12px] cursor-pointer border px-2 py-1 rounded text-center" onClick={() => randomize()}>Randomize</p></p>
           <div>
             <code>npm i useritem</code>
           </div>
