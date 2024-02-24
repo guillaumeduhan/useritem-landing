@@ -20,7 +20,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <div className="text-center bg-fuchsia-300 cursor-pointer text-[15px] py-4">
           <Link href="https://tally.so/r/3y9Z4x">
-            Hey 👋! I am working on it every day to enhance UserItem. Thanks for your understanding. <span className="underline">Feel free to submit any changes here.</span>
+            Hey 👋 I am working on UserItem every day to enhance it. Thanks for your understanding. <span className="underline">Feel free to submit any changes here.</span>
           </Link>
         </div>
         {children}
