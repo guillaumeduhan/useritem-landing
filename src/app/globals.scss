@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;700;800;900&display=swap");
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -66,13 +68,14 @@
   }
 
   body {
-    @apply text-[20px];
+    @apply text-[20px] bg-gradient-to-br from-fuchsia-50  via-white to-fuchsia-50 h-screen;
     line-height: 1.4;
+    font-family: "Outfit", sans-serif !important;
   }
 
   h1 {
-    @apply text-[64px] font-[800] text-transparent bg-clip-text bg-gradient-to-t to-neutral-400 from-black mb-0;
-    line-height: 1.5;
+    @apply text-[64px] font-[800];
+    line-height: 1.15;
   }
 }
 

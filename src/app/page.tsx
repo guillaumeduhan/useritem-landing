@@ -1,9 +1,7 @@
 "use client";
-import NextIcon from "@/components/Icons/Nextjs";
-import ReactIcon from "@/components/Icons/React";
 import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
+import { Label } from "@radix-ui/react-label";
 import { Github } from "lucide-react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
@@ -55,35 +53,27 @@ export default function Home() {
     setData((prev: any) => ({ ...prev, [target]: v }))
   };
 
-  return <div className="flex flex-col gap-8">
-    <div className="h-[50px] w-full opacity-100 border-b-2 border-black" style={{
-      backgroundImage: `url('./bg.webp')`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center center'
-    }} />
-    <header className="relative flex flex-col items-center justify-center">
-      <div className="absolute top-2 right-12">
+  return <div className="container mx-auto">
+    <main className="grid items-center gap-4 m-4 lg:m-12 lg:grid-cols-12">
+      <div className="grid gap-8 text-center lg:col-span-6 lg:text-left animate__animated animate__fadeInUp">
+        <div className="w-24 h-24 mx-auto overflow-hidden rounded-lg lg:mx-0">
+          <Image src={Logo} alt="UserItem" />
+        </div>
+        <h1 className="text-[32px] lg:text-[64px]">Never Code This Component Again</h1>
+        <p className="text-[24px] lg:text-[32px]">Here it is: simple, lightweight, and modular. Use it to display your users.</p>
+        <code>npm i useritem</code>
         <Link href="https://dub.sh/useritem-github" target="_blank">
           <Button>
             <Github className="w-4 h-4 mr-2" /> Github
           </Button>
         </Link>
       </div>
-      <div className="w-12 h-12 overflow-hidden rounded-lg">
-        <Image src={Logo} alt="UserItem" />
-      </div>
-      <h1>useritem</h1>
-      <p className="mb-0 whitespace-normal text-neutral-400">A fully customizable component to display your users.</p>
-    </header>
-    <main className="grid gap-4 pb-12 grow">
-      <div className="flex items-center justify-center gap-4 mb-6">
-        <div className="text-[16px]">
-          <UserItem {...data} onClick={() => alert("hello there!")} />
+      <div className="flex flex-col gap-[64px] lg:col-span-6 animate__animated animate__fadeInRight">
+        <div className="text-[16px] mx-auto">
+          <UserItem {...data} onClick={() => alert("hello there!")} style={{ backgroundColor: 'white' }} />
         </div>
-      </div>
-      <div className="grid gap-4">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:w-[600px] align-top py-4 mx-auto content-start">
-          {["avatar", "avatarUrl", "border", "disabled", "loading", "online", "shadow", "squared", "status"].map((target: any, key: number) => <div key={key} className="flex items-center justify-center gap-1">
+        <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
+          {["avatar", "avatarUrl", "border", "disabled", "loading", "online", "shadow", "squared", "status"].map((target: any, key: number) => <div key={key} className="flex items-center justify-center gap-2">
             <Switch
               id={target}
               checked={data[target]}
@@ -92,20 +82,7 @@ export default function Home() {
             <Label htmlFor={target} className="w-[50px]">{target}</Label>
           </div>)}
         </div>
-        <div className="grid gap-4 max-w-[500px] mx-auto">
-          <p>
-            <p className="text-neutral-400 mb-0 text-[12px] cursor-pointer border px-2 py-1 rounded text-center" onClick={() => randomize()}>Randomize</p></p>
-          <div>
-            <code>npm i useritem</code>
-          </div>
-          <div className="flex gap-2 items-center justify-center text-[32px]">
-            <ReactIcon />
-            <NextIcon />
-          </div>
-        </div>
-        <div className="flex items-center justify-center">
-          <p className="text-neutral-400 mb-0 text-[12px]"><Link href="https://tally.so/r/3y9Z4x" className="text-black underline cursor-pointer">Request for more props here.</Link></p>
-        </div>
+        <Link href="https://tally.so/r/3y9Z4x" className="text-center text-black underline cursor-pointer">Request for props.</Link>
       </div>
     </main>
   </div>
