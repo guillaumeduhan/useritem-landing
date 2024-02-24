@@ -29,6 +29,7 @@ export default function Home() {
     status: true,
     title: "Guillaume Duhan",
     verified: true,
+    maxWidth: 300
   });
 
   const randomize = async () => {
@@ -60,7 +61,7 @@ export default function Home() {
           <Image src={Logo} alt="UserItem" />
         </div>
         <h1 className="text-[32px] lg:text-[64px]">Never Code This Component Again</h1>
-        <p className="text-[24px] lg:text-[32px]">Here it is: simple, lightweight, and modular. Use it to display your users.</p>
+        <p className="text-[24px] lg:text-[32px]">Lightweight and modular. <br />Use it to display your users.</p>
         <code>npm i useritem@latest</code>
         <Link href="https://dub.sh/useritem-github" target="_blank">
           <Button>
@@ -70,7 +71,7 @@ export default function Home() {
       </div>
       <div className="flex flex-col gap-[64px] lg:col-span-6 lg:animate__animated animate__fadeInRight">
         <div className="text-[16px] mx-auto">
-          <UserItem {...data} limit={18} onClick={() => alert("hello there!")} style={{ backgroundColor: 'white' }} />
+          <UserItem {...data} onClick={() => alert("hello there!")} />
         </div>
         <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
           {["avatar", "avatarUrl", "border", "disabled", "loading", "online", "shadow", "squared", "status"].map((target: any, key: number) => <div key={key} className="flex items-center justify-center gap-2">
