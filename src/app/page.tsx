@@ -61,7 +61,7 @@ export default function Home() {
         </div>
         <h1 className="text-[32px] lg:text-[64px]">Never Code This Component Again</h1>
         <p className="text-[24px] lg:text-[32px]">Here it is: simple, lightweight, and modular. Use it to display your users.</p>
-        <code>npm i useritem</code>
+        <code>npm i useritem@latest</code>
         <Link href="https://dub.sh/useritem-github" target="_blank">
           <Button>
             <Github className="w-4 h-4 mr-2" /> Github
