@@ -55,7 +55,7 @@ export default function Home() {
 
   return <div className="container mx-auto">
     <main className="grid items-center gap-4 m-4 lg:m-12 lg:grid-cols-12">
-      <div className="grid gap-8 text-center lg:col-span-6 lg:text-left animate__animated animate__fadeInUp">
+      <div className="grid gap-8 text-center lg:col-span-6 lg:text-left lg:animate__animated animate__fadeInUp">
         <div className="w-24 h-24 mx-auto overflow-hidden rounded-lg lg:mx-0">
           <Image src={Logo} alt="UserItem" />
         </div>
@@ -68,9 +68,9 @@ export default function Home() {
           </Button>
         </Link>
       </div>
-      <div className="flex flex-col gap-[64px] lg:col-span-6 animate__animated animate__fadeInRight">
+      <div className="flex flex-col gap-[64px] lg:col-span-6 lg:animate__animated animate__fadeInRight">
         <div className="text-[16px] mx-auto">
-          <UserItem {...data} onClick={() => alert("hello there!")} style={{ backgroundColor: 'white' }} />
+          <UserItem {...data} limit={18} onClick={() => alert("hello there!")} style={{ backgroundColor: 'white' }} />
         </div>
         <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
           {["avatar", "avatarUrl", "border", "disabled", "loading", "online", "shadow", "squared", "status"].map((target: any, key: number) => <div key={key} className="flex items-center justify-center gap-2">
