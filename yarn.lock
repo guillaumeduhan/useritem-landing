@@ -5203,10 +5203,10 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
-useritem@0.1.24:
-  version "0.1.24"
-  resolved "https://registry.yarnpkg.com/useritem/-/useritem-0.1.24.tgz#e0d15c918ebc65e1d5066041533ba8e36f0e22c2"
-  integrity sha512-opl/LLZWs0zMvnWAbM1LDWqPcxnmKhxgLfc1prQ2N3ZT7OUSpXmhi34YpDElxETMKbfu0UqJdMHxZTyve5Klog==
+useritem@^0.1.25:
+  version "0.1.25"
+  resolved "https://registry.yarnpkg.com/useritem/-/useritem-0.1.25.tgz#9a3445bf48cd3ddcc6278f9d51b710e76c3c02d2"
+  integrity sha512-S0CX0GIgyQtOEYVF+tGNIUDruyGuDBDOCaLwQPRRqaTj/GjHLw/HcDPgua8iQ6mxaH8Hoifx8MhHPeY37TwbYw==
   dependencies:
     "@types/react" "^18.2.55"
     mini-css-extract-plugin "^2.8.0"

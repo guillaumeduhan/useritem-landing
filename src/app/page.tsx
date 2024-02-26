@@ -1,4 +1,5 @@
 "use client";
+import Documentation from "@/components/Documentation";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@radix-ui/react-label";
@@ -13,6 +14,7 @@ const UserItem = dynamic(() => import("useritem"), { ssr: false })
 const AVATAR_URL = "https://substackcdn.com/image/fetch/w_96,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb60dc67d-fd59-47eb-84f1-e2ba033783d0_545x545.png";
 
 export default function Home() {
+  const [open, setOpen] = useState<boolean>(false);
   const [data, setData] = useState<any>({
     avatar: true,
     avatarUrl: AVATAR_URL,
@@ -29,7 +31,7 @@ export default function Home() {
     status: true,
     title: "Guillaume Duhan",
     verified: true,
-    maxWidth: 300
+    width: 350
   });
 
   const randomize = async () => {
@@ -55,7 +57,7 @@ export default function Home() {
   };
 
   return <div className="container mx-auto">
-    <main className="grid items-center gap-4 m-4 lg:m-12 lg:grid-cols-12">
+    <main className="grid items-center gap-12 m-4 lg:m-12 lg:grid-cols-12">
       <div className="grid gap-8 text-center lg:col-span-6 lg:text-left lg:animate__animated animate__fadeInUp">
         <div className="w-24 h-24 mx-auto overflow-hidden rounded-lg lg:mx-0">
           <Image src={Logo} alt="UserItem" />
@@ -63,11 +65,14 @@ export default function Home() {
         <h1 className="text-[32px] lg:text-[64px]">Never Code This Component Again</h1>
         <p className="text-[24px] lg:text-[32px]">Lightweight and modular. <br />Use it to display your users.</p>
         <code>npm i useritem@latest</code>
-        <Link href="https://dub.sh/useritem-github" target="_blank">
-          <Button>
-            <Github className="w-4 h-4 mr-2" /> Github
-          </Button>
-        </Link>
+        <div className="flex items-center gap-4 mx-auto lg:mx-0">
+          <Link href="https://dub.sh/useritem-github" target="_blank">
+            <Button>
+              <Github className="w-4 h-4 mr-2" /> Github
+            </Button>
+          </Link>
+          <Button className="text-sm" variant="secondary" onClick={() => setOpen(!open)}>Docs</Button>
+        </div>
       </div>
       <div className="flex flex-col gap-[64px] lg:col-span-6 lg:animate__animated animate__fadeInRight">
         <div className="text-[16px] mx-auto">
@@ -86,5 +91,6 @@ export default function Home() {
         <Link href="https://tally.so/r/3y9Z4x" className="text-center text-black underline cursor-pointer">Request for props.</Link>
       </div>
     </main>
+    {open && <Documentation />}
   </div>
 };

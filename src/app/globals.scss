@@ -68,9 +68,27 @@
   }
 
   body {
-    @apply text-[20px] bg-gradient-to-br from-fuchsia-50  via-white to-fuchsia-50 h-screen;
+    @apply text-[20px] bg-gradient-to-br from-fuchsia-50  via-white to-fuchsia-50 min-h-screen;
     line-height: 1.4;
     font-family: "Outfit", sans-serif !important;
+    background-repeat: no-repeat;
+    background-size: "contain";
+  }
+
+  table,
+  th,
+  thead,
+  tr {
+    @apply border max-w-[900px] mx-auto;
+  }
+
+  td,
+  tr,
+  th {
+    @apply p-2;
+  }
+  td {
+    @apply border p-4;
   }
 
   h1 {
