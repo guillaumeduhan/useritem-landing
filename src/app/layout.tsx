@@ -2,6 +2,7 @@
 import 'animate.css';
 import { Inter } from "next/font/google";
 import Link from "next/link";
+import Script from 'next/script';
 import "./globals.scss";
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,7 +26,7 @@ export default function RootLayout({
         </div>
         {children}
       </body>
-      <script defer data-domain="useritem.dev" src="https://plausible.io/js/script.js"></script>
+      <Script data-domain="useritem.dev" src="https://plausible.io/js/script.js" />
     </html >
   );
 }
