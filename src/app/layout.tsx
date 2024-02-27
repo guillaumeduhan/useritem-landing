@@ -1,8 +1,14 @@
 'use client';
 import 'animate.css';
+import { Outfit } from 'next/font/google';
 import Link from "next/link";
 import Script from 'next/script';
 import "./globals.scss";
+const outfit = Outfit({
+  subsets: ['latin'],
+  display: 'swap',
+})
+
 
 export default function RootLayout({
   children,
@@ -16,7 +22,7 @@ export default function RootLayout({
         <meta name="description" content="A fully customizable component to display your users." />
         <title>UserItem by @codewithguillaume</title>
       </head>
-      <body>
+      <body className={outfit.className}>
         <div className="text-center bg-fuchsia-300 cursor-pointer text-[15px] py-4">
           <Link href="https://tally.so/r/3y9Z4x">
             Hey 👋 I am working on UserItem every day to enhance it. Thanks for your understanding. <span className="underline">Feel free to submit any changes here.</span>
