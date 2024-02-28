@@ -31,7 +31,8 @@ export default function Home() {
     status: true,
     title: "Guillaume Duhan",
     verified: true,
-    width: 350
+    width: 300,
+    minHeight: 76
   });
 
   const randomize = async () => {
@@ -79,7 +80,7 @@ export default function Home() {
           <UserItem {...data} onClick={() => alert("hello there!")} />
         </div>
         <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
-          {["avatar", "avatarUrl", "border", "disabled", "loading", "online", "shadow", "squared", "status"].map((target: any, key: number) => <div key={key} className="flex items-center justify-center gap-2">
+          {["avatar", "avatarUrl", "border", "disabled", "loading", "online", "reverse", "small", "shadow", "squared", "status"].map((target: any, key: number) => <div key={key} className="flex items-center justify-center gap-2">
             <Switch
               id={target}
               checked={data[target]}
