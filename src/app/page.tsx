@@ -31,8 +31,11 @@ export default function Home() {
     status: true,
     title: "Guillaume Duhan",
     verified: true,
-    width: 300,
-    minHeight: 76
+    width: 290,
+    minHeight: 76,
+    style: {
+      fontSize: "18px",
+    }
   });
 
   const randomize = async () => {
