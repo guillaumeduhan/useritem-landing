@@ -69,6 +69,9 @@ export default function Home() {
         <h1 className="text-[32px] lg:text-[64px]">Never Code This Component Again</h1>
         <p className="text-[24px] lg:text-[32px]">Lightweight and modular. <br />Use it to display your users.</p>
         <code>npm i useritem@latest</code>
+        <a href="https://www.producthunt.com/posts/useritem?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-useritem" target="_blank">
+          <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=442355&theme=light" alt="Useritem - Never code this component again | Product Hunt" style={{ width: '250px', height: '54px' }} width="250" height="54" />
+        </a>
         <div className="flex items-center gap-4 mx-auto lg:mx-0">
           <Link href="https://dub.sh/useritem-github" target="_blank">
             <Button>
