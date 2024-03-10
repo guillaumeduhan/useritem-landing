@@ -24,7 +24,7 @@
     "sass": "^1.70.0",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
-    "useritem": "0.1.38"
+    "useritem": "0.1.40"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.23.9",
