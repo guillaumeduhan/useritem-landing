@@ -1,7 +1,6 @@
 'use client';
 
-import dynamic from "next/dynamic";
-const UserItem: any = dynamic(() => import("useritem"), { ssr: false })
+import UserItem from "useritem";
 
 export default function TestPage() {
   const props: any = {

@@ -1,15 +1,13 @@
 "use client";
-import Documentation from "@/components/Documentation";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@radix-ui/react-label";
 import { Github } from "lucide-react";
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import UserItem from "useritem";
 import Logo from '../../public/logo.png';
-const UserItem = dynamic(() => import("useritem"), { ssr: false })
 
 const AVATAR_URL = "https://substackcdn.com/image/fetch/w_96,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb60dc67d-fd59-47eb-84f1-e2ba033783d0_545x545.png";
 
@@ -86,7 +84,7 @@ export default function Home() {
           <UserItem {...data} onClick={() => alert("hello there!")} />
         </div>
         <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
-          {["avatar", "avatarUrl", "border", "disabled", "loading", "online", "onlyAvatar", "reverse", "small", "shadow", "squared", "status", "verified"].map((target: any, key: number) => <div key={key} className="flex items-center justify-center gap-2">
+          {["avatar", "avatarUrl", "border", "disabled", "online", "onlyAvatar", "reverse", "shadow", "squared", "status", "verified"].map((target: any, key: number) => <div key={key} className="flex items-center justify-center gap-2">
             <Switch
               id={target}
               checked={data[target]}
@@ -95,9 +93,7 @@ export default function Home() {
             <Label htmlFor={target} className="w-[50px]">{target}</Label>
           </div>)}
         </div>
-        <Link href="https://tally.so/r/3y9Z4x" className="text-center text-black underline cursor-pointer">Request for props.</Link>
       </div>
     </main>
-    {open && <Documentation />}
   </div>
 };
