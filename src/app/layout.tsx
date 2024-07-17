@@ -1,8 +1,8 @@
 'use client';
 import 'animate.css';
 import { Outfit } from 'next/font/google';
-import Link from "next/link";
 import Script from 'next/script';
+import { Suspense } from 'react';
 import "./globals.scss";
 const outfit = Outfit({
   subsets: ['latin'],
@@ -23,12 +23,9 @@ export default function RootLayout({
         <title>UserItem by @codewithguillaume</title>
       </head>
       <body className={outfit.className}>
-        <div className="text-center bg-fuchsia-300 cursor-pointer text-[15px] py-4">
-          <Link href="https://tally.so/r/3y9Z4x">
-            Hey 👋 I am working on UserItem every day to enhance it. Thanks for your understanding. <span className="underline">Feel free to submit any changes here.</span>
-          </Link>
+        <div className="py-1 text-center bg-fuchsia-400">
         </div>
-        {children}
+        <Suspense>{children}</Suspense>
       </body>
       <Script data-domain="useritem.dev" src="https://plausible.io/js/script.js" />
     </html >

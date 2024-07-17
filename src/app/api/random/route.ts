@@ -10,7 +10,7 @@ export async function GET() {
       icon: faker.datatype.boolean(),
       online: faker.datatype.boolean(),
       status: faker.datatype.boolean(),
-      title: faker.person.fullName(),
+      name: faker.person.fullName(),
       verified: faker.datatype.boolean(),
     };
   };

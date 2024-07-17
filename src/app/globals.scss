@@ -68,42 +68,12 @@
   }
 
   body {
-    @apply text-[20px] bg-gradient-to-br from-fuchsia-50  via-white to-fuchsia-50 min-h-screen;
+    @apply text-[20px] min-h-screen;
     line-height: 1.4;
     font-family: "Outfit", sans-serif;
     font-optical-sizing: auto;
     background-repeat: no-repeat;
     font-style: normal;
     background-size: "contain";
-  }
-
-  table,
-  th,
-  thead,
-  tr {
-    @apply border max-w-[900px] mx-auto;
-  }
-
-  td,
-  tr,
-  th {
-    @apply p-2;
-  }
-  td {
-    @apply border p-4;
-  }
-
-  h1 {
-    @apply text-[64px] font-[800];
-    line-height: 1.15;
-  }
-}
-
-@keyframes opacityChange {
-  0% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
   }
 }
