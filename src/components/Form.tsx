@@ -43,11 +43,11 @@ const UserForm = ({ formData, setFormData }: any) => {
         onChange={handleChange}
       />
 
-      <label className="text-sm text-neutral-400">Background Color:</label>
+      <label className="text-sm text-neutral-400">avatarBackgroundColor:</label>
       <Input
         type="color"
-        name="backgroundColor"
-        value={formData.backgroundColor}
+        name="avatarBackgroundColor"
+        value={formData.avatarBackgroundColor}
         onChange={handleChange}
       />
 
@@ -78,13 +78,6 @@ const UserForm = ({ formData, setFormData }: any) => {
         name="online"
         checked={formData.online}
         onCheckedChange={checked => handleChange({ target: { name: 'online', type: 'checkbox', checked } })}
-      />
-
-      <label className="text-sm text-neutral-400">Only Avatar:</label>
-      <Switch
-        name="onlyAvatar"
-        checked={formData.onlyAvatar}
-        onCheckedChange={checked => handleChange({ target: { name: 'onlyAvatar', type: 'checkbox', checked } })}
       />
 
       <label className="text-sm text-neutral-400">Reverse:</label>

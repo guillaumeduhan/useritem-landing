@@ -18,13 +18,13 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "lucide-react": "^0.321.0",
-    "next": "14.1.0",
+    "next": "^14.2.15",
     "react": "^18",
     "react-dom": "^18",
     "sass": "^1.70.0",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
-    "useritem": "0.2.10"
+    "useritem": "latest"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.23.9",

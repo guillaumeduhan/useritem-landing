@@ -6,18 +6,18 @@ import UserItem from 'useritem';
 export default function Home() {
   const [formData, setFormData] = useState({
     avatar: true,
-    avatarUrl: '',
-    backgroundColor: '#03b66e',
+    avatarUrl: 'https://avatars.githubusercontent.com/u/31253241?v=4&size=64',
+    avatarBackgroundColor: '#03b66e',
     border: true,
-    description: 'Youtuber',
+    description: 'CTO @Allocations',
     disabled: false,
-    width: 275,
+    width: 200,
     onClick: null,
     online: false,
     onlyAvatar: false,
     reverse: false,
     squared: false,
-    status: true,
+    status: false,
     shadow: false,
     style: {},
     name: 'Guillaume Duhan',
@@ -30,7 +30,7 @@ export default function Home() {
         <h1 className='text-xl'>useritem v0.2.14</h1>
         <p className="text-neutral-500 text-lg">A lightweight and modular React component to display your users informations.</p>
       </header>
-      <div className='bg-white w-[400px] p-12 rounded shadow'>
+      <div className='bg-white w-[400px] p-12 rounded shadow flex items-center justify-center'>
         <UserItem {...formData} />
       </div>
       <div className="px-8 py-3 text-sm rounded-full shadow bg-neutral-900 text-white">
