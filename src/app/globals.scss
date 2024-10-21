@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-// @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;700;800;900&display=swap");
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -68,12 +66,10 @@
   }
 
   body {
-    @apply text-[20px] min-h-screen;
-    line-height: 1.4;
-    font-family: "Outfit", sans-serif;
-    font-optical-sizing: auto;
-    background-repeat: no-repeat;
-    font-style: normal;
-    background-size: "contain";
+    @apply bg-black text-white;
+  }
+
+  input {
+    @apply bg-transparent #{!important};
   }
 }

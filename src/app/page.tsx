@@ -1,8 +1,5 @@
 'use client';
 import Form from '@/components/Form';
-import { Undo } from 'lucide-react';
-import Image from 'next/image';
-import Logo from 'public/logo.png';
 import { useState } from 'react';
 import UserItem from 'useritem';
 
@@ -27,25 +24,19 @@ export default function Home() {
     verified: true,
   });
 
-  return <div className="w-full h-screen py-12">
+  return <div className="grid gap-4 items-center lg:grid-cols-2 w-full h-screen p-8 container">
     <div className="flex flex-col items-center justify-center gap-8">
       <header className="text-center">
-        <div className="w-12 mx-auto overflow-hidden rounded">
-          <Image alt="useritem" src={Logo} />
-        </div>
-        <h1 className="text-[40px] font-bold font-[700]">Never code this component again</h1>
-        <p className="text-neutral-600">Lightweight and modular.</p>
-        <div className="flex items-center justify-center">
-          <Undo className="-rotate-[100deg] text-neutral-600" />
-        </div>
+        <h1 className='text-xl'>useritem v0.2.14</h1>
+        <p className="text-neutral-500 text-lg">A lightweight and modular React component to display your users informations.</p>
       </header>
-      <div>
+      <div className='bg-white w-[400px] p-12 rounded shadow'>
         <UserItem {...formData} />
       </div>
-      <div className="px-4 py-3 text-sm rounded shadow bg-slate-100 text-neutral-800">
+      <div className="px-8 py-3 text-sm rounded-full shadow bg-neutral-900 text-white">
         <code>npm i useritem@latest</code>
       </div>
-      <Form {...{ formData, setFormData }} />
     </div>
+    <Form {...{ formData, setFormData }} />
   </div>;
 };
