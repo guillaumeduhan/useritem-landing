@@ -1,42 +1,64 @@
-'use client';
-import Form from '@/components/Form';
-import { useState } from 'react';
-import UserItem from 'useritem';
 
-export default function Home() {
-  const [formData, setFormData] = useState({
+'use client';
+import UserForm from '@/components/Form';
+import UserItem from '@/components/UserItem';
+import Image from 'next/image';
+import { useState } from 'react'
+import logo from "../../public/logo.png";
+
+export type UserItemProps = {
+  avatar: boolean;
+  avatarBackgroundColor?: string;
+  avatarUrl?: string;
+  border?: boolean;
+  description?: string;
+  disabled?: boolean;
+  name: string;
+  onClick?: (() => void) | null;
+  onlyAvatar?: boolean;
+  reverse?: boolean;
+  status?: 'online' | 'offline' | 'busy';
+  squared?: boolean;
+  style?: React.CSSProperties;
+  verified?: boolean;
+  width?: number;
+};
+
+const page = () => {
+  const [formData, setFormData] = useState<UserItemProps>({
     avatar: true,
-    avatarUrl: 'https://avatars.githubusercontent.com/u/31253241?v=4&size=64',
-    avatarBackgroundColor: '#03b66e',
+    avatarBackgroundColor: "#03b66e",
+    avatarUrl: "https://avatars.githubusercontent.com/u/31253241?v=4&size=64",
     border: true,
-    description: 'CTO @Allocations',
+    description: "CTO @Allocations",
     disabled: false,
-    width: 200,
-    onClick: null,
-    online: false,
+    name: "Guillaume Duhan",
+    onClick: () => alert("hello world"),
     onlyAvatar: false,
     reverse: false,
+    status: "busy",
     squared: false,
-    status: false,
-    shadow: false,
     style: {},
-    name: 'Guillaume Duhan',
     verified: true,
+    width: 200,
   });
-
-  return <div className="grid gap-4 items-center lg:grid-cols-2 w-full h-screen p-8 container">
-    <div className="flex flex-col items-center justify-center gap-8">
-      <header className="text-center">
-        <h1 className='text-xl'>useritem v0.2.14</h1>
-        <p className="text-neutral-500 text-lg">A lightweight and modular React component to display your users informations.</p>
+  return <div>
+    <div className="relative flex items-center justify-center min-h-screen">
+      <header>
+        <div className="absolute overflow-hidden rounded-full top-2 left-2 size-16">
+          <Image src={logo} alt="useritem" />
+        </div>
+        <div className="absolute px-5 py-3 transition duration-300 rounded-lg shadow cursor-pointer text-neutral-300 top-2 right-2 bg-gradient-to-r to-neutral-800 from-transparent hover:from-neutral-800">
+          <code>npm i useritem@latest</code>
+        </div>
       </header>
-      <div className='bg-white w-[400px] p-12 rounded shadow flex items-center justify-center'>
-        <UserItem {...formData} />
-      </div>
-      <div className="px-8 py-3 text-sm rounded-full shadow bg-neutral-900 text-white">
-        <code>npm i useritem@latest</code>
+      <div className="z-50 scale-150">
+        <UserItem {...{ data: formData, setData: setFormData }} />
       </div>
     </div>
-    <Form {...{ formData, setFormData }} />
-  </div>;
-};
+    <div className="hidden">
+      <UserForm {...{ formData, setFormData }} />
+    </div>
+  </div>
+}
+export default page;
