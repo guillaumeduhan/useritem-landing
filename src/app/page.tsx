@@ -1,6 +1,5 @@
 
 'use client';
-import UserForm from '@/components/Form';
 import UserItem from '@/components/UserItem';
 import Image from 'next/image';
 import { useState } from 'react'
@@ -25,7 +24,7 @@ export type UserItemProps = {
   width?: number;
 };
 
-const page = () => {
+const Homepage = () => {
   const [formData, setFormData] = useState<UserItemProps>({
     avatar: true,
     avatarBackgroundColor: "#03b66e",
@@ -62,4 +61,4 @@ const page = () => {
     </footer>
   </main>
 }
-export default page;
+export default Homepage;
