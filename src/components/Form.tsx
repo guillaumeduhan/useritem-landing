@@ -1,7 +1,16 @@
+'use client';
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 import { Input } from '@/components/ui/input';
 import { Switch } from '@/components/ui/switch';
+import { Button } from '@/components/ui/button';
+import { Settings } from 'lucide-react';
 
-const UserForm = ({ formData, setFormData }: any) => {
+const UserOptionsDropdown = ({ formData, setFormData }: any) => {
   const handleChange = (e: any) => {
     const { name, value, type, checked } = e.target;
     setFormData({
@@ -11,111 +20,120 @@ const UserForm = ({ formData, setFormData }: any) => {
   };
 
   return (
-    <form className="grid grid-cols-2 gap-4 p-4 border dark:border-neutral-800 rounded">
-      <label className="text-sm text-neutral-400">Name:</label>
-      <Input
-        type="text"
-        name="name"
-        value={formData.name}
-        onChange={handleChange}
-      />
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="outline" className="flex items-center gap-2 text-lg border-neutral-200 dark:border-neutral-700">
+          <Settings />
+          <span>Customize</span>
+        </Button>
+      </DropdownMenuTrigger>
 
-      <label className="text-sm text-neutral-400">Description:</label>
-      <Input
-        type="text"
-        name="description"
-        value={formData.description}
-        onChange={handleChange}
-      />
+      <DropdownMenuContent className="w-full max-w-[460px] p-0 border-neutral-200 dark:border-neutral-700">
+        <form className="grid grid-cols-2 gap-3 p-4">
+          <label className="text-sm text-neutral-400">Name</label>
+          <Input name="name" value={formData.name} onChange={handleChange} />
 
-      <label className="text-sm text-neutral-400">Avatar:</label>
-      <Switch
-        name="avatar"
-        checked={formData.avatar}
-        onCheckedChange={checked => handleChange({ target: { name: 'avatar', type: 'checkbox', checked } })}
-      />
+          <label className="text-sm text-neutral-400">Description</label>
+          <Input
+            name="description"
+            value={formData.description}
+            onChange={handleChange}
+          />
 
-      <label className="text-sm text-neutral-400">AvatarUrl:</label>
-      <Input
-        type="text"
-        name="avatarUrl"
-        value={formData.avatarUrl}
-        onChange={handleChange}
-      />
+          <label className="text-sm text-neutral-400">Avatar</label>
+          <Switch
+            checked={formData.avatar}
+            onCheckedChange={(checked) =>
+              handleChange({ target: { name: 'avatar', type: 'checkbox', checked } })
+            }
+          />
 
-      <label className="text-sm text-neutral-400">avatarBackgroundColor:</label>
-      <Input
-        type="color"
-        name="avatarBackgroundColor"
-        value={formData.avatarBackgroundColor}
-        onChange={handleChange}
-      />
+          <label className="text-sm text-neutral-400">Avatar URL</label>
+          <Input
+            name="avatarUrl"
+            value={formData.avatarUrl}
+            onChange={handleChange}
+          />
 
-      <label className="text-sm text-neutral-400">Border:</label>
-      <Switch
-        name="border"
-        checked={formData.border}
-        onCheckedChange={checked => handleChange({ target: { name: 'border', type: 'checkbox', checked } })}
-      />
+          <label className="text-sm text-neutral-400">Avatar BG</label>
+          <Input
+            type="color"
+            name="avatarBackgroundColor"
+            value={formData.avatarBackgroundColor}
+            onChange={handleChange}
+          />
 
-      <label className="text-sm text-neutral-400">Disabled:</label>
-      <Switch
-        name="disabled"
-        checked={formData.disabled}
-        onCheckedChange={checked => handleChange({ target: { name: 'disabled', type: 'checkbox', checked } })}
-      />
+          <label className="text-sm text-neutral-400">Border</label>
+          <Switch
+            checked={formData.border}
+            onCheckedChange={(checked) =>
+              handleChange({ target: { name: 'border', type: 'checkbox', checked } })
+            }
+          />
 
-      <label className="text-sm text-neutral-400">Width:</label>
-      <Input
-        type="number"
-        name="width"
-        value={formData.width}
-        onChange={handleChange}
-      />
+          <label className="text-sm text-neutral-400">Disabled</label>
+          <Switch
+            checked={formData.disabled}
+            onCheckedChange={(checked) =>
+              handleChange({ target: { name: 'disabled', type: 'checkbox', checked } })
+            }
+          />
 
-      <label className="text-sm text-neutral-400">Online:</label>
-      <Switch
-        name="online"
-        checked={formData.online}
-        onCheckedChange={checked => handleChange({ target: { name: 'online', type: 'checkbox', checked } })}
-      />
+          <label className="text-sm text-neutral-400">Only avatar</label>
+          <Switch
+            checked={formData.onlyAvatar}
+            onCheckedChange={(checked) =>
+              handleChange({ target: { name: 'onlyAvatar', type: 'checkbox', checked } })
+            }
+          />
 
-      <label className="text-sm text-neutral-400">Reverse:</label>
-      <Switch
-        name="reverse"
-        checked={formData.reverse}
-        onCheckedChange={checked => handleChange({ target: { name: 'reverse', type: 'checkbox', checked } })}
-      />
+          <label className="text-sm text-neutral-400">Reverse</label>
+          <Switch
+            checked={formData.reverse}
+            onCheckedChange={(checked) =>
+              handleChange({ target: { name: 'reverse', type: 'checkbox', checked } })
+            }
+          />
 
-      <label className="text-sm text-neutral-400">Squared:</label>
-      <Switch
-        name="squared"
-        checked={formData.squared}
-        onCheckedChange={checked => handleChange({ target: { name: 'squared', type: 'checkbox', checked } })}
-      />
+          <label className="text-sm text-neutral-400">Squared</label>
+          <Switch
+            checked={formData.squared}
+            onCheckedChange={(checked) =>
+              handleChange({ target: { name: 'squared', type: 'checkbox', checked } })
+            }
+          />
 
-      <label className="text-sm text-neutral-400">Status:</label>
-      <Switch
-        name="status"
-        checked={formData.status}
-        onCheckedChange={checked => handleChange({ target: { name: 'status', type: 'checkbox', checked } })}
-      />
+          <label className="text-sm text-neutral-400">Verified</label>
+          <Switch
+            checked={formData.verified}
+            onCheckedChange={(checked) =>
+              handleChange({ target: { name: 'verified', type: 'checkbox', checked } })
+            }
+          />
 
-      <label className="text-sm text-neutral-400">Shadow:</label>
-      <Switch
-        name="shadow"
-        checked={formData.shadow}
-        onCheckedChange={checked => handleChange({ target: { name: 'shadow', type: 'checkbox', checked } })}
-      />
+          <label className="text-sm text-neutral-400">Status</label>
+          <select
+            name="status"
+            value={formData.status}
+            onChange={handleChange}
+            className="px-2 text-sm bg-transparent border rounded-md h-9 border-neutral-800"
+          >
+            <option value="online">online</option>
+            <option value="offline">offline</option>
+            <option value="busy">busy</option>
+          </select>
 
-      <label className="text-sm text-neutral-400">Verified:</label>
-      <Switch
-        name="verified"
-        checked={formData.verified}
-        onCheckedChange={checked => handleChange({ target: { name: 'verified', type: 'checkbox', checked } })}
-      />
-    </form>
+          <label className="text-sm text-neutral-400">Width</label>
+          <Input
+            type="number"
+            name="width"
+            value={formData.width}
+            onChange={handleChange}
+          />
+        </form>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };
 
-export default UserForm;
+export default UserOptionsDropdown;

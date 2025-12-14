@@ -5,6 +5,7 @@ import UserItem from '@/components/UserItem';
 import Image from 'next/image';
 import { useState } from 'react'
 import logo from "../../public/logo.png";
+import UserOptionsDropdown from '@/components/Form';
 
 export type UserItemProps = {
   avatar: boolean;
@@ -42,7 +43,7 @@ const page = () => {
     verified: true,
     width: 200,
   });
-  return <div>
+  return <main>
     <div className="relative flex items-center justify-center min-h-screen">
       <header>
         <div className="absolute overflow-hidden rounded-full top-2 left-2 size-16">
@@ -56,9 +57,9 @@ const page = () => {
         <UserItem {...{ data: formData, setData: setFormData }} />
       </div>
     </div>
-    <div className="hidden">
-      <UserForm {...{ formData, setFormData }} />
-    </div>
-  </div>
+    <footer className="fixed cursor-pointer bottom-4 left-4">
+      <UserOptionsDropdown {...{ formData, setFormData }} />
+    </footer>
+  </main>
 }
 export default page;
