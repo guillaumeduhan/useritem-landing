@@ -22,7 +22,7 @@ const UserOptionsDropdown = ({ formData, setFormData }: any) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" className="flex items-center gap-2 text-lg border-neutral-200 dark:border-neutral-700">
+        <Button variant="outline" className="flex items-center gap-2 border-neutral-200 dark:border-neutral-700">
           <Settings />
           <span>Customize</span>
         </Button>
@@ -108,6 +108,14 @@ const UserOptionsDropdown = ({ formData, setFormData }: any) => {
             checked={formData.verified}
             onCheckedChange={(checked) =>
               handleChange({ target: { name: 'verified', type: 'checkbox', checked } })
+            }
+          />
+
+          <label className="text-sm text-neutral-400">Show Status</label>
+          <Switch
+            checked={formData.showStatus}
+            onCheckedChange={(checked) =>
+              handleChange({ target: { name: 'showStatus', type: 'checkbox', checked } })
             }
           />
 
