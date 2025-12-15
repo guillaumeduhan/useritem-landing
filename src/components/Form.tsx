@@ -22,7 +22,7 @@ const UserOptionsDropdown = ({ formData, setFormData }: any) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" className="flex items-center gap-2 border-neutral-200 dark:border-neutral-700">
+        <Button variant="outline" className="flex items-center gap-2 cursor-pointer border-neutral-200 dark:hover:bg-neutral-600 dark:border-neutral-700">
           <Settings />
           <span>Customize</span>
         </Button>
@@ -131,13 +131,13 @@ const UserOptionsDropdown = ({ formData, setFormData }: any) => {
             <option value="busy">busy</option>
           </select>
 
-          <label className="text-sm text-neutral-400">Width</label>
+          {/* <label className="text-sm text-neutral-400">Max Width</label>
           <Input
             type="number"
-            name="width"
-            value={formData.width}
+            name="maxWidth"
+            value={formData.maxWidth}
             onChange={handleChange}
-          />
+          /> */}
         </form>
       </DropdownMenuContent>
     </DropdownMenu>
