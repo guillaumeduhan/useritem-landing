@@ -28,7 +28,7 @@ const UserOptionsDropdown = ({ formData, setFormData }: any) => {
         </Button>
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent className="w-full max-w-[460px] p-0 border-neutral-200 dark:border-neutral-700">
+      <DropdownMenuContent className="w-full max-w-[460px] p-0 bg-neutral-900 border-neutral-200 dark:border-neutral-700">
         <form className="grid grid-cols-2 gap-3 p-4">
           <label className="text-sm text-neutral-400">Name</label>
           <Input name="name" value={formData.name} onChange={handleChange} />

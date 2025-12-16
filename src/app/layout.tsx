@@ -1,6 +1,7 @@
 import "animate.css";
 import { Suspense } from "react";
 import "./globals.scss";
+import { Toaster, toast } from 'sonner'
 
 export default function RootLayout({
   children,
@@ -96,6 +97,7 @@ export default function RootLayout({
 
       <body>
         <Suspense>{children}</Suspense>
+        <Toaster theme="dark" richColors position="top-right" />
       </body>
     </html>
   );

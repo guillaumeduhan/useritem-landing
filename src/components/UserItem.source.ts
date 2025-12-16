@@ -1,4 +1,5 @@
-'use client';
+// AUTO-GENERATED — DO NOT EDIT
+export const USERITEM_SOURCE = `'use client';
 export type UserItemProps = {
   avatar: boolean;
   avatarBackgroundColor?: string;
@@ -60,26 +61,26 @@ const UserItem = ({ data, setData }: { data: UserItemProps, setData: (u: UserIte
     style={{
       maxWidth: 240
     }}
-    className={`
+    className={\`
     useritem group px-2 w-full py-2 flex items-center justify-center gap-2 bg-transparent hover:bg-white/5 cursor-pointer transition duration-300 max-w-full truncate
-    ${border && 'border border-neutral-200 dark:border-neutral-700 hover:border-neutral-100 hover:dark:border-neutral-600'}
-    ${!squared && 'rounded'}
-    ${disabled && "pointer-events-none opacity-50"} 
-    ${style}
-    ${reverse && 'flex-row-reverse text-right'}
-    `}
+    \${border && 'border border-neutral-200 dark:border-neutral-700 hover:border-neutral-100 hover:dark:border-neutral-600'}
+    \${!squared && 'rounded'}
+    \${disabled && "pointer-events-none opacity-50"} 
+    \${style}
+    \${reverse && 'flex-row-reverse text-right'}
+    \`}
   >
     {avatar && <div
-      className={`relative flex items-center justify-center avatar size-10 min-w-10 max-w-10 bg-neutral-100 dark:bg-neutral-800 hover:dark:bg-neutral-700 transition-all duration-300 font-[600]
-    ${!squared && 'rounded-full'}
-    `}
+      className={\`relative flex items-center justify-center avatar size-10 min-w-10 max-w-10 bg-neutral-100 dark:bg-neutral-800 hover:dark:bg-neutral-700 transition-all duration-300 font-[600]
+    \${!squared && 'rounded-full'}
+    \`}
       style={{
         backgroundColor: avatarBackgroundColor ?? '',
-        background: avatarUrl && avatarUrl.length > 0 ? `url(${avatarUrl})` : '',
+        background: avatarUrl && avatarUrl.length > 0 ? \`url(\${avatarUrl})\` : '',
         backgroundSize: 'cover'
       }}>
       {!avatarUrl && <span>{name[0] || 'A'}</span>}
-      {showStatus && <span className={`absolute bottom-0 right-0 rounded-full size-3 border ${getStatusColor()}`}></span>}
+      {showStatus && <span className={\`absolute bottom-0 right-0 rounded-full size-3 border \${getStatusColor()}\`}></span>}
     </div>}
     {!onlyAvatar && <div className="grid user">
       <div className="flex items-center gap-1 truncate">
@@ -96,4 +97,4 @@ const UserItem = ({ data, setData }: { data: UserItemProps, setData: (u: UserIte
     </div>}
   </div>
 }
-export default UserItem;
+export default UserItem;`;
